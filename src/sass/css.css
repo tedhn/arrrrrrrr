@@ -29,18 +29,17 @@ body {
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/jess-harding-lqT6NAmTaiY-unsplash.jpg");
   background-size: cover;
   background-position: center;
+  -webkit-clip-path: inset(10em);
+          clip-path: inset(10em);
   -webkit-filter: blur(20px);
           filter: blur(20px);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: -1;
 }
 
 .drop-shadow {
@@ -57,41 +56,5 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.drop-shadow:before {
-  display: block;
-  content: "";
-  position: absolute;
-  top: 10em;
-  height: calc(100% - 20em);
-  width: calc(100% - 20em);
-  border-top: 2px solid rgba(225, 225, 225, 0.2);
-  border-left: 1px solid rgba(225, 225, 225, 0.1);
-  border-right: 1px solid rgba(225, 225, 225, 0.3);
-  z-index: 2;
-}
-
-.drop-shadow > span {
-  position: absolute;
-  z-index: 5;
-  color: black;
-  font-size: 4em;
-  letter-spacing: 0.75em;
-  padding-left: 0.375em;
-}
-
-@media (max-width: 980px) {
-  .glass {
-    -webkit-clip-path: inset(5em);
-            clip-path: inset(5em);
-  }
-  .drop-shadow:before {
-    top: 5em;
-    width: calc(100% - 10em);
-  }
-  .drop-shadow > span {
-    font-size: 4em;
-  }
 }
 /*# sourceMappingURL=css.css.map */

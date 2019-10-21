@@ -7,7 +7,6 @@ export default function Header(){
 	return(
 		<div className='drop-shadow'>
 			<div className = 'glass' >asdfasdf</div>
-			<span>glass</span>
 		</div>
 	)
 }
