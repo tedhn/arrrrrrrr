@@ -90,12 +90,6 @@ body {
   font-size: 3em;
 }
 
-.asdf .Content .line1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .asdf .Content .line1 .typing {
   position: relative;
   margin-left: 0.25em;
