@@ -1,60 +1,128 @@
-@import url("https://fonts.googleapis.com/css?family=Rajdhani:300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap");
 body, html {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.frontPage {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-family: 'Rajdhani', sans-serif;
-}
-
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.glass {
-  height: 100%;
-  width: 100%;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/jess-harding-lqT6NAmTaiY-unsplash.jpg");
+  background-image: url("https://wallpapercave.com/wp/wp2255833.jpg");
   background-size: cover;
   background-position: center;
-  -webkit-clip-path: inset(10em);
-          clip-path: inset(10em);
-  -webkit-filter: blur(20px);
-          filter: blur(20px);
-  display: block;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  font-family: 'Baloo Bhai', cursive;
 }
 
-.drop-shadow {
+.asdf {
   height: 100%;
   width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
   -webkit-filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.3));
           filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.3));
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+}
+
+.asdf .header {
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+  color: white;
+}
+
+.asdf .header img {
+  float: left;
+  padding-left: 0.375rem;
+  margin: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+.asdf .header .name {
+  float: left;
+  margin: 10px;
+  letter-spacing: 0.4em;
+  padding-top: 10px;
+  font-size: 1.8rem;
+  z-index: 5;
+  color: white;
+  -webkit-filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.3));
+}
+
+.asdf .header > Button {
+  font-family: 'Baloo Bhai', cursive;
+  border: none;
+  background-color: transparent;
+  outline: transparent;
+  float: right;
+  margin: 10px;
+  letter-spacing: 0.4em;
+  padding-top: 15px;
+  padding-left: 10px;
+  font-size: 1.2rem;
+  z-index: 5;
+  color: white;
+  -webkit-filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.3));
+}
+
+.asdf .Content {
+  height: 90%;
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  color: white;
+  font-size: 3em;
+}
+
+.asdf .Content .line1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.asdf .Content .line1 .typing {
+  position: relative;
+  margin-left: 0.25em;
+}
+
+.asdf .Content .line1 .typing:after {
+  position: absolute;
+  content: "|";
+  -webkit-animation: blink 0.5s infinite ease;
+          animation: blink 0.5s infinite ease;
+}
+
+@-webkit-keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=css.css.map */

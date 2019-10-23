@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './1';
-import Content from './2'
 
 function App(){
 	return(
+		<div className='frontPage'>
 			<Header/>
+		</div>
 	)
 }
 

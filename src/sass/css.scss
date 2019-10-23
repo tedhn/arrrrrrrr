@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Rajdhani:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap');
 
-$blur: 20px;
+$blur: 10px;
 $shadow-opacity: 0.30;
-$image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1376484/jess-harding-lqT6NAmTaiY-unsplash.jpg';
-
+$image: 'https://wallpapercave.com/wp/wp2255833.jpg';
 
 body, html {
   height: 100%;
@@ -11,38 +10,104 @@ body, html {
   padding: 0;
 }
 
+#root{
+	height: 100%;
+	width: 100%;
+}
+
+.frontPage{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
 
 body {
-   display: flex;
-  justify-content: center;
-  align-items: center;
-font-family: 'Rajdhani', sans-serif;
-
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-.glass {
-  height: 100%;
-  width: 100%;
-   background-image: url($image);
+  display: flex;
+  background-image: url($image);
   background-size: cover;
   background-position: center;
-  clip-path: inset(10em);
-  filter: blur($blur);
-  display: block;
-  justify-content: center;
-  align-items: center;
+  font-family: 'Baloo Bhai', cursive;
 }
 
-.drop-shadow {
+.asdf {
   height: 100%;
   width: 100%;
+	background-color: rgba(0, 0, 0, 0.3);
 	filter:  drop-shadow(0px 20px 10px rgba(0, 0, 0, $shadow-opacity));
   display: flex;
-  justify-content: center;
-  align-items: center;
 
+	.header{
+		width: 100%;
+		position: absolute;
+    z-index: 5;
+    color: white;
+  
+		img {
+			float: left;
+			padding-left: 0.375rem;;
+			margin: 10px;
+			height: 50px;
+			width: 50px;
+		}
+
+		.name{
+			float: left;
+			margin: 10px;
+			letter-spacing: 0.4em;
+			padding-top: 10px;
+			font-size: 1.8rem;
+			z-index: 5;
+			color: white;
+			filter:  drop-shadow(0px 20px 10px rgba(0, 0, 0, $shadow-opacity));
+		}
+
+		>Button{
+			font-family: 'Baloo Bhai', cursive;
+			border:none;
+			background-color: transparent;
+			outline: transparent;
+			float: right;
+			margin: 10px;
+			letter-spacing: 0.4em;
+			padding-top: 15px;
+			padding-left: 10px;
+			font-size: 1.2rem;
+			z-index: 5;
+			color: white;
+			filter:  drop-shadow(0px 20px 10px rgba(0, 0, 0, $shadow-opacity));
+
+		}
+	}
+
+	.Content{
+		height: 90%;
+		width: 100%;
+		position: absolute;
+		top: 10%;
+		color: white;
+		font-size: 3em;;
+
+		.line1{
+			display: flex;
+
+		
+			.typing{
+				position: relative;
+				margin-left: 0.25em;
+			
+			&:after{
+				position : absolute;
+				content : "|";
+				animation: blink 0.5s infinite ease;
+			}
+			}
+		}
+	}
 }
+
+@keyframes blink {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
