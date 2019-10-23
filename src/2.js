@@ -1,5 +1,4 @@
 import React, { useEffect , useState} from 'react';
-import { type } from 'os';
 
 let count = 0 ;
 let index = 0 ;
@@ -18,18 +17,23 @@ export default function Content(){
 			count = 0;
 		}
 	
+
 		currentLetter = texts[count];
-
+		console.log(currentLetter)
 		setLetter(currentLetter.slice(0, ++index))
-
+		console.log(index + ')' + letter)
 		if(letter.length === currentLetter.length){
 			index = 0 ;
 			count ++;
 		}
 		
 		document.querySelector('.typing').textContent = letter;
+
 	}
 
+	useEffect(
+		typing
+	,[])
 
 	return(
 		<div className='Content'>
