@@ -1,55 +1,47 @@
-import React, { useEffect } from 'react';
+import React, { useEffect , useState } from 'react';
 
-let count = 0 ;
-let index = 0 ;
-let currentLetter = '';
-let letter = '';
+const STATUS_TYPING = 'typing'
+const STATUS_DELETING = 'deleting'
 
 export default function Content(){
 
+	const [selected_text,setSelectedText] = useState({selected : 0 , index : 0 , status : STATUS_TYPING})
+
 	const texts = ['FM Hoes' , 'Raiderers' , 'Broke'];
+	const selected = selected_text.selected;
+	const index = selected_text.index;
+	const status = selected_text.status;
 
-	const typing =()=>{
-		if(count === texts.length){
-			count = 0;
-		}
+  const startTyping = () => {
+    if (status === STATUS_TYPING) {
+      if (index > texts[selected].length - 1) {
+        setSelectedText({ ...selected_text, status: STATUS_DELETING})
+      } else {
+        setSelectedText({ ...selected_text, index: index + 1 });
+      }
+    } else {
+      if (index <= -1) {
+        const next_selected = (selected + 1) % 3;
+        setSelectedText({ ...selected_text, selected: next_selected, index: 0, status: STATUS_TYPING});
+      } else {
+        setSelectedText({ ...selected_text, index: index - 1 });
+      }
+    }
+  }
 
-		currentLetter = texts[count];
-
-		letter = currentLetter.slice(0 , ++index);
-
-		document.querySelector('.typing').textContent = letter;
-
-		if(letter.length === currentLetter.length){
-
-			count ++ ;
-			index = 0 ;
-
-		}
-
-		setTimeout(typing , 400)
-	}
-
-	const deleting =()=>{
-		if(letter.length === 0){
-			setTimeout(typing , 400)
-		}
-		else{
-			letter = letter.slice(0 , -1);
-			document.querySelector('.typing').textContent = letter;
-		}
-	}
-
-	useEffect(typing,[])
+	useEffect(()=>{
+		setTimeout(startTyping , 300)
+	},[selected , index , status])
 
 	return(
 		<div className='Content'>
 			<div className="line1">
 				<div>We are</div>
-				<div className="typing"></div>
-				<button onClick={typing}>asdf</button>
-				<button onClick={deleting}>1234</button>
+				<div className="typing">{texts[selected].substring(0, index)}</div>
 			</div>	
+			<div className='otherLines'>MapleSaga is a low rate, nostalgic MapleStory private server.</div>
+			<div className='otherLines'>Enjoy old-school MapleStory gameplay and a friendly community.</div>
+			<div className='otherLines'>x8 EXP / x5 Mesos / v62 with a Skill Rebalance</div>
 		</div>
 	)
 }

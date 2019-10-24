@@ -14,8 +14,6 @@ export default function Header(){
 					<button>Earn Nx</button>
 					<button>Forum</button>
 				</div>
-
-				<Content/>
 		</div>
 	)
 }

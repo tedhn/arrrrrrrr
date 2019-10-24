@@ -24,9 +24,10 @@ body, html {
 
 body {
   display: flex;
-  background-image: url($image);
+	background-image: url($image);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   font-family: 'Baloo Bhai', cursive;
 }
 
@@ -79,30 +80,53 @@ body {
 
 		}
 	}
+}
 
-	.Content{
-		height: 90%;
-		width: 100%;
-		position: absolute;
-		top: 10%;
-		color: white;
-		font-size: 3em;;
+.Content{
+	height: 90%;
+	width: 100%;
+	position: absolute;
+	top: 10%;
+	color: white;
+	font-size: 3em;;
 
-		.line1{
+	.line1{
+		display: flex;
+		padding: 10% 10% 0 10%;
 
-
+	
+		.typing{
+			position: relative;
+			margin-left: 0.25em;
 		
-			.typing{
-				position: relative;
-				margin-left: 0.25em;
-			
-			&:after{
-				position : absolute;
-				content : "|";
-				animation: blink 0.5s infinite ease;
-			}
-			}
+		&:after{
+			position : absolute;
+			content : "|";
+			animation: blink 0.5s infinite ease;
 		}
+		}
+	}
+
+	.otherLines{
+		padding-left: 10%;
+		font-size: 0.6em;
+	}
+}
+
+.Content2{
+	height: 100%;
+	width: 100%;
+	background-image: url($image);
+  background-size: cover;
+  background-position: center;
+
+	.background-dim{
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+	}
+	>div{
+		position: absolute;;
 	}
 }
 
