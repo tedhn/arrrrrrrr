@@ -6,12 +6,11 @@ body, html {
 }
 
 #root {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
 }
 
 .frontPage {
-  height: 100%;
+  height: 200%;
   width: 100%;
   position: absolute;
 }
@@ -20,17 +19,19 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-image: url("https://wallpapercave.com/wp/wp2255833.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.25)), to(rgba(0, 0, 0, 0.25))), url("https://wallpapercave.com/wp/wp2255833.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("https://wallpapercave.com/wp/wp2255833.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   font-family: 'Baloo Bhai', cursive;
+  -webkit-transition: 0.6 ease;
+  transition: 0.6 ease;
 }
 
 .asdf {
-  height: 100%;
+  height: 40%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
   -webkit-filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.3));
           filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.3));
   display: -webkit-box;
@@ -39,10 +40,30 @@ body {
 }
 
 .asdf .header {
+  height: 5%;
+  margin: 30px 10px;
   width: 100%;
-  position: absolute;
+  display: block;
   z-index: 5;
   color: white;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.asdf .header.scrolled {
+  width: 100%;
+  height: 15%;
+  padding: 0 5px;
+  margin: 30px 0px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  color: white;
+  -webkit-box-shadow: 0 0 30px 3px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 30px 3px rgba(0, 0, 0, 0.6);
 }
 
 .asdf .header img {
@@ -54,6 +75,7 @@ body {
 }
 
 .asdf .header .name {
+  height: 100%;
   float: left;
   margin: 10px;
   letter-spacing: 0.4em;
@@ -65,7 +87,8 @@ body {
           filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.3));
 }
 
-.asdf .header > Button {
+.asdf .header button {
+  height: 100%;
   font-family: 'Baloo Bhai', cursive;
   border: none;
   background-color: transparent;
@@ -73,8 +96,7 @@ body {
   float: right;
   margin: 10px;
   letter-spacing: 0.4em;
-  padding-top: 15px;
-  padding-left: 10px;
+  padding: 5px;
   font-size: 1.2rem;
   z-index: 5;
   color: white;
@@ -83,19 +105,26 @@ body {
 }
 
 .Content {
-  height: 90%;
   width: 100%;
   position: absolute;
   top: 10%;
   color: white;
   font-size: 3em;
+  -webkit-transition: 0.6s ease-in;
+  transition: 0.6s ease-in;
+}
+
+.Content.Dim {
+  opacity: 0;
+  -webkit-transition: 0.6s ease-in;
+  transition: 0.6s ease-in;
 }
 
 .Content .line1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 10% 10% 0 10%;
+  padding: 5% 5% 0 10%;
 }
 
 .Content .line1 .typing {
@@ -106,8 +135,8 @@ body {
 .Content .line1 .typing:after {
   position: absolute;
   content: "|";
-  -webkit-animation: blink 0.5s infinite ease;
-          animation: blink 0.5s infinite ease;
+  -webkit-animation: blink 0.6s infinite ease;
+          animation: blink 0.6s infinite ease;
 }
 
 .Content .otherLines {
@@ -115,38 +144,33 @@ body {
   font-size: 0.6em;
 }
 
-.Content2 {
-  height: 100%;
+.video {
+  height: 500px;
   width: 100%;
-  background-image: url("https://wallpapercave.com/wp/wp2255833.jpg");
-  background-size: cover;
-  background-position: center;
+  -webkit-transition: 0.6s ease-in;
+  transition: 0.6s ease-in;
 }
 
-.Content2 .background-dim {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.Content2 > div {
-  position: absolute;
+.video.dim {
+  opacity: 0;
+  -webkit-transition: 0.6s ease-in;
+  transition: 0.6s ease-in;
 }
 
 @-webkit-keyframes blink {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
 
 @keyframes blink {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }

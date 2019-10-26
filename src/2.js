@@ -6,7 +6,8 @@ const STATUS_DELETING = 'deleting'
 export default function Content(){
 
 	const [selected_text,setSelectedText] = useState({selected : 0 , index : 0 , status : STATUS_TYPING})
-
+	const [opacity , setOpacity] = useState(false)
+ 
 	const texts = ['FM Hoes' , 'Raiderers' , 'Broke'];
 	const selected = selected_text.selected;
 	const index = selected_text.index;
@@ -29,12 +30,23 @@ export default function Content(){
     }
   }
 
+	window.addEventListener('scroll' , ()=>{
+		const scrolledValue = document.documentElement.scrollTop;
+
+		if(scrolledValue >= 200){
+			setOpacity(true)
+		}
+		else{
+			setOpacity(false)
+		}
+	})
+
 	useEffect(()=>{
-		setTimeout(startTyping , 300)
+		setTimeout((startTyping) , 300)
 	},[selected , index , status])
 
 	return(
-		<div className='Content'>
+		<div className={opacity ? 'Content Dim' : 'Content'}>
 			<div className="line1">
 				<div>We are</div>
 				<div className="typing">{texts[selected].substring(0, index)}</div>
@@ -42,6 +54,7 @@ export default function Content(){
 			<div className='otherLines'>MapleSaga is a low rate, nostalgic MapleStory private server.</div>
 			<div className='otherLines'>Enjoy old-school MapleStory gameplay and a friendly community.</div>
 			<div className='otherLines'>x8 EXP / x5 Mesos / v62 with a Skill Rebalance</div>
+
 		</div>
 	)
 }

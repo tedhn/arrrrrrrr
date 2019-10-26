@@ -11,12 +11,11 @@ body, html {
 }
 
 #root{
-	height: 100%;
-	width: 100%;
+	height: 100vh;
 }
 
 .frontPage{
-	height: 100%;
+	height: 200%;
 	width: 100%;
 	position: absolute;
 }
@@ -24,35 +23,54 @@ body, html {
 
 body {
   display: flex;
-	background-image: url($image);
+	background : linear-gradient( rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25) ), url($image);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   font-family: 'Baloo Bhai', cursive;
+	transition: 0.6 ease;
 }
 
 .asdf {
-  height: 100%;
+	height: 40%;
   width: 100%;
-	background-color: rgba(0, 0, 0, 0.3);
 	filter:  drop-shadow(0px 20px 10px rgba(0, 0, 0, $shadow-opacity));
   display: flex;
+	
 
 	.header{
-		width: 100%;
-		position: absolute;
+		height: 5%;
+		margin: 30px 10px;
+		width:100%;
+		display: block;
     z-index: 5;
     color: white;
-  
+		transition: 0.2s ease;
+
+		&.scrolled{
+			width: 100%;
+			height: 15%;
+			padding: 0 5px;
+			margin: 30px 0px;
+			position: sticky;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 100;
+			color: white;
+      box-shadow : 0 0 30px 3px rgba(0,0,0,0.6);
+		}
+
 		img {
 			float: left;
 			padding-left: 0.375rem;;
 			margin: 10px;
 			height: 50px;
-			width: 50px;
+			width: 50px ;
 		}
 
 		.name{
+			height: 100%;
 			float: left;
 			margin: 10px;
 			letter-spacing: 0.4em;
@@ -63,7 +81,8 @@ body {
 			filter:  drop-shadow(0px 20px 10px rgba(0, 0, 0, $shadow-opacity));
 		}
 
-		>Button{
+		button{
+			height: 100%;
 			font-family: 'Baloo Bhai', cursive;
 			border:none;
 			background-color: transparent;
@@ -71,28 +90,33 @@ body {
 			float: right;
 			margin: 10px;
 			letter-spacing: 0.4em;
-			padding-top: 15px;
-			padding-left: 10px;
+			padding: 5px;
 			font-size: 1.2rem;
 			z-index: 5;
 			color: white;
 			filter:  drop-shadow(0px 20px 10px rgba(0, 0, 0, $shadow-opacity));
-
 		}
+
 	}
+
 }
 
 .Content{
-	height: 90%;
 	width: 100%;
 	position: absolute;
 	top: 10%;
 	color: white;
-	font-size: 3em;;
+	font-size: 3em;
+	transition: 0.6s ease-in;
+
+	&.Dim{
+		opacity: 0;
+		transition: 0.6s ease-in;
+	}
 
 	.line1{
 		display: flex;
-		padding: 10% 10% 0 10%;
+		padding: 5% 5% 0 10%;
 
 	
 		.typing{
@@ -102,36 +126,29 @@ body {
 		&:after{
 			position : absolute;
 			content : "|";
-			animation: blink 0.5s infinite ease;
+			animation: blink 0.6s infinite ease;
 		}
 		}
 	}
-
 	.otherLines{
 		padding-left: 10%;
 		font-size: 0.6em;
 	}
 }
 
-.Content2{
-	height: 100%;
+.video{	
+	height: 500px;
 	width: 100%;
-	background-image: url($image);
-  background-size: cover;
-  background-position: center;
+	transition: 0.6s ease-in;
 
-	.background-dim{
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.3);
-	}
-	>div{
-		position: absolute;;
+	&.dim{
+		opacity: 0;
+		transition: 0.6s ease-in;
 	}
 }
 
 @keyframes blink {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
