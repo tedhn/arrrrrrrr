@@ -55,6 +55,10 @@ export default function Content(){
 			<div className='otherLines'>Enjoy old-school MapleStory gameplay and a friendly community.</div>
 			<div className='otherLines'>x8 EXP / x5 Mesos / v62 with a Skill Rebalance</div>
 
+			<a href='https://forums.maplesaga.com/index.php?threads/why-is-saga-different-do-i-need-to-hp-wash-on-saga.2266/'>
+				<button>Find Out More >></button>
+			</a>
+
 		</div>
 	)
 }
